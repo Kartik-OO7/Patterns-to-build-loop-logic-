@@ -1,0 +1,69 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and run",
+      "type": "shell",
+      "command": "",
+      "args": [
+        "copy",
+        "\"${file}\"",
+        "${workspaceFolder}\\jspwTest.cpp",
+        "&&",
+        "g++",
+        "jspwTest.cpp",
+        "-o",
+        "jspwTest",
+        "&&",
+        "jspwTest",
+        "<",
+        "input.txt",
+        ">",
+        "output.txt",
+        "&&",
+        "del",
+        "jspwTest.exe",
+        "&&",
+        "del",
+        "jspwTest.cpp"
+      ],
+      "presentation": {
+        "reveal": "silent"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/c"]
+        }
+      }
+    },
+
+    {
+      "label": "Insert C++ Boilerplate",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "echo #include <bits/stdc++.h> > ${workspaceFolder}\\main.cpp && echo using namespace std; >> ${workspaceFolder}\\main.cpp && echo int main() { >> ${workspaceFolder}\\main.cpp && echo     ios::sync_with_stdio(false); >> ${workspaceFolder}\\main.cpp && echo     cin.tie(NULL); >> ${workspaceFolder}\\main.cpp && echo     return 0; >> ${workspaceFolder}\\main.cpp && echo } >> ${workspaceFolder}\\main.cpp"
+      ],
+      "presentation": {
+        "reveal": "silent"
+      }
+    }
+  ]
+}
