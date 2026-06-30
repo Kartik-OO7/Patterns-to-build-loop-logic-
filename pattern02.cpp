@@ -11,7 +11,10 @@ void Rtriangle(int n){
         cout << endl;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 898a91336a102308716996d7704c0794d16136df
 int main() {
     int n;
     cin >> n;
