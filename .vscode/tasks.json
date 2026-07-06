@@ -28,7 +28,9 @@
         "jspwTest.cpp"
       ],
       "presentation": {
-        "reveal": "silent"
+        "reveal": "silent", // Ab terminal nahi khulega, sab shanti se background mai hoga
+        "focus": false,
+        "panel": "shared"
       },
       "group": {
         "kind": "build",
@@ -49,7 +51,8 @@
         "shell": {
           "executable": "cmd.exe",
           "args": ["/c"]
-        }
+        },
+        "timeout": 10000 // Terminal nahi bhi dikhega, toh bhi 10 second mai infinite loop khud mar jayega!
       }
     },
 
